@@ -9,11 +9,9 @@ import {FlightService} from '../services/flight.service';
 export class FlightlistComponent implements OnInit {
 
   flights: Array<any> = [];
-  flightService: FlightService;
 
-  constructor(flightService: FlightService) {
+  constructor(private flightService: FlightService) {
     this.flights = flightService.getFlights();
-    this.flightService = flightService;
   }
 
   ngOnInit() {
