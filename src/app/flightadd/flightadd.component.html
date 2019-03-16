@@ -1,0 +1,43 @@
+<h1>Ajout d'un vol</h1>
+<div class="form-group">
+  <label for="num">Numéro</label>
+  <input type="text" [(ngModel)]="num" id="num" class="form-control" [ngClass]="errors.num ? 'is-invalid' : ''" required>
+  <div class="invalid-feedback" *ngIf="errors.num">
+    {{ errors.num }}
+  </div>
+</div>
+<div class="form-group">
+  <label for="airportStart">Aéroport de Départ</label>
+  <input type="text" [(ngModel)]="airportStart" id="airportStart" class="form-control" required>
+</div>
+<div class="form-group">
+  <label for="codeAirportStart">Code Aéroport de Départ</label>
+  <input type="text" [(ngModel)]="airportStartAbbreviation" id="codeAirportStart" class="form-control" required>
+</div>
+<div class="form-group">
+  <label for="airportEnd">Aéroport d'Arrivé</label>
+  <input type="text" [(ngModel)]="airportEnd" id="airportEnd" class="form-control" required>
+</div>
+<div class="form-group">
+  <label for="codeAirportEnd">Code Aéroport d'Arrivé</label>
+  <input type="text" [(ngModel)]="airportEndAbbreviation" id="codeAirportEnd" class="form-control" required>
+</div>
+<div class="form-group">
+  <label for="flightStart">Heure de Départ</label>
+  <input type="text" [(ngModel)]="flightStart" id="flightStart" class="form-control" required>
+</div>
+<div class="form-group">
+  <label for="flightEnd">Heure d'Arrivée</label>
+  <input type="text" [(ngModel)]="flightEnd" id="flightEnd" class="form-control" required>
+</div>
+<div class="form-check">
+  <input class="form-check-input" [(ngModel)]="emergency" type="checkbox" id="emergency">
+  <label class="form-check-label" for="emergency">
+    Urgence
+  </label>
+</div>
+<div class="form-group">
+  <label for="passengers">Nombre de passagers</label>
+  <input type="text" [(ngModel)]="passengers" id="passengers" class="form-control" required>
+</div>
+<button class="btn btn-success" (click)="add()">Ajouter</button>

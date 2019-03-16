@@ -1,0 +1,51 @@
+<div class="col-md-1">
+  <h2 class="badge" [ngClass]="emergency ? 'badge-danger' : 'badge-success'">{{ num }}</h2>
+</div>
+<div class="col-md-8">
+  <p>
+    {{ flightStart }} - {{ airportStart }} <strong>{{ airportStartAbbreviation }}</strong>
+  </p>
+  <p>
+    {{ flightEnd }} - {{ airportEnd }} <strong>{{ airportEndAbbreviation }}</strong>
+  </p>
+  <table *ngIf="isDetailsShown" class="table table-striped">
+    <tbody>
+      <tr>
+        <td>Numéro de vol</td>
+        <td>{{ num }}</td>
+      </tr>
+      <tr>
+        <td>Nombre de passagers</td>
+        <td>{{ passengers }}</td>
+      </tr>
+      <tr>
+        <td>Départ du vol</td>
+        <td>{{ flightStart }}</td>
+      </tr>
+      <tr>
+        <td>Arrivé du vol (heure locale)</td>
+        <td>{{ flightEnd }}</td>
+      </tr>
+      <tr>
+        <td>Aéroport de départ</td>
+        <td>{{ airportStart }} (<strong>{{ airportStartAbbreviation }}</strong>)</td>
+      </tr>
+      <tr>
+        <td>Aéroport d'arrivé</td>
+        <td>{{ airportEnd }} (<strong>{{ airportEndAbbreviation }}</strong>)</td>
+      </tr>
+      <tr>
+        <td>Etat d'urgence ?</td>
+        <td>{{ emergency ? 'Oui' : 'Non' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="col-md-3">
+  <p>
+    <button (click)="deleteFlight()" type="button" class="btn btn-danger"><img width="20px" src="assets/icones/baseline-delete-24px.svg"> Supprimer</button>
+  </p>
+  <p>
+    <button (click)="toggleDetails()" class="btn btn-secondary">Afficher les détails</button>
+  </p>
+</div>

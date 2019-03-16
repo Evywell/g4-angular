@@ -1,0 +1,15 @@
+<div class="flightlist">
+  <h1>Liste des vols <img width="50px" src="assets/icones/baseline-flight_takeoff-24px.svg"></h1>
+    <app-flightdetails *ngFor="let flight of flights" class="row flightlist-item"
+      [num]="flight.num"
+      [flightStart]="flight.flightStart"
+      [flightEnd]="flight.flightEnd"
+      [airportStart]="flight.airportStart"
+      [airportEnd]="flight.airportEnd"
+      [airportStartAbbreviation]="flight.airportStartAbbreviation"
+      [airportEndAbbreviation]="flight.airportEndAbbreviation"
+      [emergency]="flight.emergency"
+      [passengers]="flight.passengers"
+      (deleteAction)="deleteFlight($event)"
+    ></app-flightdetails>
+</div>
