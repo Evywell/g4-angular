@@ -28,8 +28,23 @@ export class FlightaddComponent implements OnInit {
   add() {
     // Vérifications
     this.errors = {};
-    if (!this.num.match(/[A-Z]{1,2}[0-9]{1,4}/)) {
+    if (!this.num.match(/[A-Z]{2,2}[0-9]{1,4}/)) {
       this.errors.num = 'Le format du numéro de vol est incorrect';
+    }
+    if (!this.airportStart.match(/[^0-9]/)) {
+      this.errors.airportStart = 'Le format de l\'aéoport de départ est incorrect';
+    }
+    if (!this.airportStartAbbreviation.match(/[^0-9]/)) {
+      this.errors.airportStartAbbreviation = 'Le format du code aéoport de départ est incorrect';
+    }
+    if (!this.airportEnd.match(/[^0-9]/)) {
+      this.errors.airportEnd = 'Le format de l\'aéoport d\'arrivée est incorrect';
+    }
+    if (!this.airportEndAbbreviation.match(/[^0-9]/)) {
+      this.errors.airportEndAbbreviation = 'Le format du code aéoport d\'arrivée est incorrect';
+    }
+    if (this.passengers <= 0) {
+      this.errors.passengers = 'Un vol doit au moins avoir un passager';
     }
 
     if (Object.keys(this.errors).length > 0) {

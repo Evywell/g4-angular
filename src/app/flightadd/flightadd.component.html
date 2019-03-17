@@ -8,19 +8,31 @@
 </div>
 <div class="form-group">
   <label for="airportStart">Aéroport de Départ</label>
-  <input type="text" [(ngModel)]="airportStart" id="airportStart" class="form-control" required>
+  <input type="text" [(ngModel)]="airportStart" id="airportStart" class="form-control" [ngClass]="errors.airportStart ? 'is-invalid' : ''" required>
+  <div class="invalid-feedback" *ngIf="errors.airportStart">
+    {{ errors.airportStart }}
+  </div>
 </div>
 <div class="form-group">
   <label for="codeAirportStart">Code Aéroport de Départ</label>
-  <input type="text" [(ngModel)]="airportStartAbbreviation" id="codeAirportStart" class="form-control" required>
+  <input type="text" [(ngModel)]="airportStartAbbreviation" id="codeAirportStart" class="form-control" [ngClass]="errors.airportStartAbbreviation ? 'is-invalid' : ''" required>
+  <div class="invalid-feedback" *ngIf="errors.airportStartAbbreviation">
+    {{ errors.airportStartAbbreviation }}
+  </div>
 </div>
 <div class="form-group">
   <label for="airportEnd">Aéroport d'Arrivé</label>
-  <input type="text" [(ngModel)]="airportEnd" id="airportEnd" class="form-control" required>
+  <input type="text" [(ngModel)]="airportEnd" id="airportEnd" class="form-control" [ngClass]="errors.airportEnd ? 'is-invalid' : ''" required>
+  <div class="invalid-feedback" *ngIf="errors.airportEnd">
+    {{ errors.airportEnd }}
+  </div>
 </div>
 <div class="form-group">
   <label for="codeAirportEnd">Code Aéroport d'Arrivé</label>
-  <input type="text" [(ngModel)]="airportEndAbbreviation" id="codeAirportEnd" class="form-control" required>
+  <input type="text" [(ngModel)]="airportEndAbbreviation" id="codeAirportEnd" class="form-control" [ngClass]="errors.airportEndAbbreviation ? 'is-invalid' : ''" required>
+  <div class="invalid-feedback" *ngIf="errors.airportEndAbbreviation">
+    {{ errors.airportEndAbbreviation }}
+  </div>
 </div>
 <div class="form-group">
   <label for="flightStart">Heure de Départ</label>
@@ -38,6 +50,9 @@
 </div>
 <div class="form-group">
   <label for="passengers">Nombre de passagers</label>
-  <input type="text" [(ngModel)]="passengers" id="passengers" class="form-control" required>
+  <input type="text" [(ngModel)]="passengers" id="passengers" class="form-control" [ngClass]="errors.passengers ? 'is-invalid' : ''" required>
+  <div class="invalid-feedback" *ngIf="errors.passengers">
+    {{ errors.passengers }}
+  </div>
 </div>
 <button class="btn btn-success" (click)="add()">Ajouter</button>
