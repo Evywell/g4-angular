@@ -10,11 +10,10 @@ export class FlightlistComponent implements OnInit {
 
   flights: Array<any> = [];
 
-  constructor(private flightService: FlightService) {
-    this.flights = flightService.getFlights();
-  }
+  constructor(private flightService: FlightService) { }
 
   ngOnInit() {
+    this.flights = this.flightService.getFlights();
   }
 
   deleteFlight(flightNum) {
