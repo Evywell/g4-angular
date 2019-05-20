@@ -10,14 +10,14 @@ import {Router} from '@angular/router';
 export class FlightaddComponent implements OnInit {
 
   @Input() num = '';
-  @Input() flightStart: string;
-  @Input() airportStart: string;
-  @Input() airportStartAbbreviation: string;
-  @Input() flightEnd: string;
-  @Input() airportEnd: string;
-  @Input() airportEndAbbreviation: string;
+  @Input() flightStart: string = '';
+  @Input() airportStart: string = '';
+  @Input() airportStartAbbreviation: string = '';
+  @Input() flightEnd: string = '';
+  @Input() airportEnd: string = '';
+  @Input() airportEndAbbreviation: string = '';
   @Input() emergency: boolean = false;
-  @Input() passengers: number;
+  @Input() passengers: number = 0;
   errors: any = {};
 
   constructor(private flightService: FlightService, private router: Router) {}
