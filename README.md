@@ -8,3 +8,6 @@ yarn
 ```
 
 Voilà :)
+
+# Auteurs
+Dani PINTO, Quentin ROUX et Axel LEDUC
